@@ -1,0 +1,52 @@
+运行环境:
+    Python3.7   
+    pip3    (python包管理工具)
+
+安装包(pip3 install 包名):
+    requests
+    lxml
+    pymysql
+    scrapy   如安装scrapy 出现错误请参照: (一般会报错,需安装 Twisted 和 VS ++)
+	 https://blog.csdn.net/chitian6393/article/details/100726695
+	 或者百度自行更改!!!
+
+文件说明:
+	xs1t
+	       项目文件 
+		config.py
+			配置文件,数据库配置,路径配置
+			数据库配置:在5-10行设置数据库参数 
+				host       (域名)
+				db          (表名)
+				user        (用户名)
+				passwd   (密码)
+			路径配置:
+				在15行配置封面路径  结尾必须为:/upload/novel_img/
+				在16行配置章节路径  结尾必须为:/upload/chapter_txt/
+			url_txt配置
+			    在20行配置要爬取的txt文件名,目前有2个,见下面
+		run.py
+			****执行脚本,进入python环境直接运行此脚本
+			
+
+		new_book.sql 
+			新版数据库文件,需运行此文件到数据库
+		
+                                upload
+			小说封面及章节存放文件夹,里面的内容需要给安卓端及后台访问权限
+                                                注:(1):API接口远程访问格式:API接口域名+文件路径
+                                                    (2):后端操作默认该文件夹为项目运行目录根目录  
+		xs1t
+			爬虫框架代码
+		all.log       
+			爬虫日志文件,存储报错信息,请求异常存储文件
+		err.txt
+			存储断章或者小说内容为空时存储文件
+		url.txt	
+			存放6万条爬取的URL
+		add_url.txt
+		    存放新增的URL
+		start_num.txt
+			记录已经爬取的小说数量(****爬虫开始的起始值****)
+			
+
